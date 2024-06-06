@@ -1,10 +1,16 @@
 # Tutorial de Uso da Diretiva State no Pawn
 
-Neste tutorial, exploraremos em detalhes o uso da diretiva `state` na linguagem de programação Pawn. A diretiva `state` é uma característica poderosa que permite a criação de autômatos finitos para gerenciar o fluxo de controle em programas reativos e interativos. Vamos abordar todos os aspectos essenciais do uso dessa diretiva, incluindo exemplos de código, dicas de boas práticas e possíveis erros a serem evitados.
+Neste tutorial, exploraremos em detalhes o uso da diretiva `state` na linguagem Pawn. A diretiva `state` é uma característica poderosa que permite a criação de autômatos finitos para gerenciar o fluxo de controle em scripts reativos e interativos. Vamos abordar todos os aspectos essenciais do uso dessa diretiva, incluindo exemplos de código, dicas de boas práticas e possíveis erros a serem evitados.
 
 ## Estados e Autômatos
 
-Um estado, na linguagem Pawn, é um conjunto de funções que definem o comportamento do programa em resposta a eventos específicos. Cada estado pode ter suas próprias funções e configurações. Um autômato, por sua vez, é uma coleção de estados que representam um contexto ou uma máquina de estados.
+Um estado, na linguagem Pawn, é um conjunto de funções que definem o comportamento do script em resposta a eventos específicos. Cada estado pode ter suas próprias funções e configurações. Um autômato, por sua vez, é uma coleção de estados que representam um contexto ou uma máquina de estados.
+
+
+Por exemplo, imagine um NPC que pode estar em três estados: "patrulhando", "perseguindo jogador" e "em alerta". Dependendo das ações do jogador e de outras condições no servidor, o NPC pode transitar entre esses estados. Quando o jogador está dentro do alcance do NPC, ele pode mudar para o estado de "perseguição"; caso contrário, ele retorna ao estado de "patrulha".
+
+
+Esses autômatos ajudam a controlar o comportamento dos elementos do servidor de forma eficiente e modular, facilitando a criação de sistemas complexos de comportamento sem a necessidade de escrever código extenso e repetitivo.
 
 ## Declarar Estados
 
@@ -30,7 +36,7 @@ funcao() <MeuAutomato:EstadoA>
 
 ## Mudando de Estado
 
-Você pode mudar de estado durante a execução do programa usando a diretiva `state`. Aqui está um exemplo de como fazer isso:
+Você pode mudar de estado durante a execução do script usando a diretiva `state`. Aqui está um exemplo de como fazer isso:
 
 ```pawn
 funcao() <MeuEstado>
@@ -55,7 +61,7 @@ main()
 
 ## Entry Functions
 
-Cada estado pode conter funções específicas que serão executadas quando o programa estiver nesse estado. As entry functions são executadas ao entrar em um estado:
+Cada estado pode conter funções específicas que serão executadas quando o script estiver nesse estado. As entry functions são executadas ao entrar em um estado:
 
 ```pawn
 funcao() <MeuEstado>
@@ -72,7 +78,7 @@ main()
 {
 	print("Iniciando execucao");
 
-	state MeuAutomato:EstadoA;
+	state MeuEstado;
 	Funcao();
 
 	print("Finalizando execucao");
@@ -172,9 +178,9 @@ funcao() <MeuAutomato:EstadoA, MeuAutomato:EstadoB> {} // erro 021: simbolo ja d
 
 ## Conclusão
 
-A diretiva `state` no Pawn é uma ferramenta poderosa para modelar fluxos de controle complexos em programas reativos. Com autômatos e estados, você pode criar estruturas de programação mais organizadas e compreensíveis, facilitando a manutenção e o desenvolvimento de software. Lembre-se de seguir as melhores práticas e evitar erros comuns para aproveitar ao máximo essa funcionalidade.
+A diretiva `state` no Pawn é uma ferramenta poderosa para modelar fluxos de controle complexos em scripts reativos. Com autômatos e estados, você pode criar estruturas de scripting mais organizadas e compreensíveis, facilitando a manutenção e o desenvolvimento. Lembre-se de seguir as melhores práticas e evitar erros comuns para aproveitar ao máximo essa funcionalidade.
 
-Espero que este tutorial tenha esclarecido o uso da diretiva `state` no Pawn e inspire você a criar programas mais robustos e eficientes.
+Espero que este tutorial tenha esclarecido o uso da diretiva `state` no Pawn e inspire você a criar scripts mais robustos e eficientes.
 
 Este tutorial foi desenvolvido com base nas vagas informações do pawn-lang.pdf disponibilizado pela CompuPhase.<br>
 Autoria de DeviceBlack 😁✌️
