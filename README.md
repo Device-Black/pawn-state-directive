@@ -54,7 +54,7 @@ main()
 	state MeuEstado; // Mudança para o MeuEstado
 	funcao(); // chamando funcao() do MeuEstado
 	
-	state MeuAutomato:EstadoB; // Mudança para o EstadoA do MeuAutomato
+	state MeuAutomato:EstadoA; // Mudança para o EstadoA do MeuAutomato
 	funcao(); // chamando funcao() do EstadoA do MeuAutomato
 }
 ```
