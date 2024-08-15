@@ -39,23 +39,23 @@ funcao() <MeuAutomato:EstadoA>
 Você pode mudar de estado durante a execução do script usando a diretiva `state`. Aqui está um exemplo de como fazer isso:
 
 ```pawn
-funcao() <MeuEstado>
+funcao() <MeuEstadoA>
 {
-	print("Função no MeuEstado");
+	print("Função no MeuEstadoA");
 }
 
-funcao() <MeuAutomato:EstadoA>
+funcao() <MeuEstadoB>
 {
-	print("Função no EstadoA do MeuAutomato");
+	print("Função no MeuEstadoB");
 }
 
 main()
 {
-	state MeuEstado; // Mudança para o MeuEstado
-	funcao(); // chamando funcao() do MeuEstado
+	state MeuEstadoA; // Mudança para o MeuEstadoA
+	funcao(); // chamando funcao() do MeuEstadoA
 	
-	state MeuAutomato:EstadoA; // Mudança para o EstadoA do MeuAutomato
-	funcao(); // chamando funcao() do EstadoA do MeuAutomato
+	state MeuEstadoB; // Mudança para o MeuEstadoB
+	funcao(); // chamando funcao() do MeuEstadoB
 }
 ```
 
